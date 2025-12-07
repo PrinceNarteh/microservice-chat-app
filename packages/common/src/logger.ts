@@ -5,6 +5,7 @@ type CreateLoggerOptions = LoggerOptions & {
   name: string;
 };
 
+
 export const createLogger = (options: CreateLoggerOptions): Logger => {
   const { name, ...rest } = options;
 
@@ -25,4 +26,4 @@ export const createLogger = (options: CreateLoggerOptions): Logger => {
     transport,
     ...rest,
   });
-};
+;
