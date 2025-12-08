@@ -12,12 +12,12 @@ export const createLogger = (options: CreateLoggerOptions): Logger => {
   const transport =
     process.env.NODE_ENV === 'development'
       ? {
-          target: 'pino-pretty',
-          options: {
-            colorize: true,
-            translateTime: 'SYS:standard',
-          },
-        }
+        target: 'pino-pretty',
+        options: {
+          colorize: true,
+          translateTime: 'SYS:standard',
+        },
+      }
       : undefined;
 
   return pino({
@@ -26,4 +26,4 @@ export const createLogger = (options: CreateLoggerOptions): Logger => {
     transport,
     ...rest,
   });
-;
+};
